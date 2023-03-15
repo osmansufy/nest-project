@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Body,
   Controller,
@@ -11,19 +12,19 @@ import { AuthDto } from './dto';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   @Post('signup')
   signup(@Body() dto: AuthDto) {
     console.log({
       dto,
     });
-    return this.authService.signUp();
+    return this.authService.signUp(dto);
   }
 
   @HttpCode(HttpStatus.OK)
   @Post('signin')
-  signin(@Body() dto: any) {
+  signin() {
     return this.authService.login();
   }
 }
