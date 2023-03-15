@@ -85,3 +85,9 @@ to create new module, run the following command:
 ```bash
 $ nest g module MODULE_NAME
 ```
+
+to run database on docker, run the following command:
+
+```bash
+$ docker-compose up dev-db -d
+```
